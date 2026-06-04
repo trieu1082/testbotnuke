@@ -3,6 +3,7 @@ from discord.ext import commands
 import asyncio
 import aiohttp
 import random
+import os
 
 intents = discord.Intents.all()
 bot = commands.Bot(command_prefix="!", intents=intents, help_command=None)
@@ -228,4 +229,4 @@ async def help(ctx):
     except:
         pass
 
-bot.run("MTUxMjA0MjkxODIwNTA2MzE5OQ.GiYBUG.gR-YRMM3XPkjg6KvvfwMfrtgkBLI8LgFQkDKDU")
+bot.run(os.getenv("DISCORD_TOKEN"))
