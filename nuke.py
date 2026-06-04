@@ -4,8 +4,11 @@ import asyncio
 import aiohttp
 import random
 import os
+from aiohttp import web
 
-intents = discord.Intents.all()
+intents = discord.Intents.default()
+intents.message_content = True
+intents.members = True
 bot = commands.Bot(command_prefix="!", intents=intents, help_command=None)
 
 bot.nuking = False
@@ -229,4 +232,21 @@ async def help(ctx):
     except:
         pass
 
-bot.run(os.getenv("DISCORD_TOKEN"))
+async def handle_web(request):
+    return web.Response(text="Bot is running")
+
+async def start_web_server():
+    app = web.Application()
+    app.router.add_get('/', handle_web)
+    runner = web.AppRunner(app)
+    await runner.setup()
+    site = web.TCPSite(runner, '0.0.0.0', int(os.environ.get('PORT', 8080)))
+    await site.start()
+    print(f"Web server started on port {int(os.environ.get('PORT', 8080))}")
+
+async def main():
+    await start_web_server()
+    await bot.start(os.getenv("DISCORD_TOKEN"))
+
+if __name__ == "__main__":
+    asyncio.run(main())
